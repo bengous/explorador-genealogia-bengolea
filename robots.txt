@@ -1,0 +1,6 @@
+# Crawl volontairement autorisé : la page porte <meta name="robots" content="noindex">.
+# Un Disallow empêcherait les robots de la lire, et elle redeviendrait indexable
+# par simple lien entrant.
+# https://developers.google.com/search/docs/crawling-indexing/block-indexing
+User-agent: *
+Allow: /
