@@ -1,4 +1,4 @@
-import{m,c,r,te,v,H,Rt,b}from"./chunk-14zhgy07.js";var qe={name:"local-uniform-bit",vertex:{header:`
+import{m,c,r,te,v,H,Et,b}from"./chunk-j2kntqwg.js";var je={name:"local-uniform-bit",vertex:{header:`
 
             struct LocalUniforms {
                 uTransformMatrix:mat3x3<f32>,
@@ -15,7 +15,7 @@ import{m,c,r,te,v,H,Rt,b}from"./chunk-14zhgy07.js";var qe={name:"local-uniform-b
             {
                 vPosition = vec4(roundPixels(vPosition.xy, globalUniforms.uResolution), vPosition.zw);
             }
-        `}},nr={...qe,vertex:{...qe.vertex,header:qe.vertex.header.replace("group(1)","group(2)")}},gt={name:"local-uniform-bit",vertex:{header:`
+        `}},Qt={...je,vertex:{...je.vertex,header:je.vertex.header.replace("group(1)","group(2)")}},ht={name:"local-uniform-bit",vertex:{header:`
 
             uniform mat3 uTransformMatrix;
             uniform vec4 uColor;
@@ -28,7 +28,7 @@ import{m,c,r,te,v,H,Rt,b}from"./chunk-14zhgy07.js";var qe={name:"local-uniform-b
             {
                 gl_Position.xy = roundPixels(gl_Position.xy, uResolution);
             }
-        `}};var ir={name:"texture-bit",vertex:{header:`
+        `}};var Jt={name:"texture-bit",vertex:{header:`
 
         struct TextureUniforms {
             uTextureMatrix:mat3x3<f32>,
@@ -44,7 +44,7 @@ import{m,c,r,te,v,H,Rt,b}from"./chunk-14zhgy07.js";var qe={name:"local-uniform-b
 
         `,main:`
             outColor = textureSample(uTexture, uSampler, vUV);
-        `}},or={name:"texture-bit",vertex:{header:`
+        `}},er={name:"texture-bit",vertex:{header:`
             uniform mat3 uTextureMatrix;
         `,main:`
             uv = (uTextureMatrix * vec3(uv, 1.0)).xy;
@@ -54,7 +54,7 @@ import{m,c,r,te,v,H,Rt,b}from"./chunk-14zhgy07.js";var qe={name:"local-uniform-b
 
         `,main:`
             outColor = texture(uTexture, vUV);
-        `}};class Ae{constructor(t){this._syncFunctionHash=Object.create(null),this._adaptor=t,this._systemCheck()}_systemCheck(){if(!Rt())throw Error("Current environment does not allow unsafe-eval, please use pixi.js/unsafe-eval module to enable support.")}ensureUniformGroup(t){let e=this.getUniformGroupData(t);t.buffer||(t.buffer=new H({data:new Float32Array(e.layout.size/4),usage:v.UNIFORM|v.COPY_DST}))}getUniformGroupData(t){return this._syncFunctionHash[t._signature]||this._initUniformGroup(t)}_initUniformGroup(t){let e=t._signature,a=this._syncFunctionHash[e];if(!a){let f=Object.keys(t.uniformStructures).map((o)=>t.uniformStructures[o]),s=this._adaptor.createUboElements(f),n=this._generateUboSync(s.uboElements);a=this._syncFunctionHash[e]={layout:s,syncFunction:n}}return this._syncFunctionHash[e]}_generateUboSync(t){return this._adaptor.generateUboSync(t)}syncUniformGroup(t,e,a){let f=this.getUniformGroupData(t);t.buffer||(t.buffer=new H({data:new Float32Array(f.layout.size/4),usage:v.UNIFORM|v.COPY_DST}));let s=null;if(!e)e=t.buffer.data,s=t.buffer.dataInt32;return a||(a=0),f.syncFunction(t.uniforms,e,s,a),!0}updateUniformGroup(t){if(t.isStatic&&!t._dirtyId)return!1;t._dirtyId=0;let e=this.syncUniformGroup(t);return t.buffer.update(),e}destroy(){this._syncFunctionHash=null}}class ue extends m{constructor({buffer:t,offset:e,size:a}){super();this.uid=c("buffer"),this._resourceType="bufferResource",this._resourceId=c("resource"),this._bufferResource=!0,this.destroyed=!1,this.buffer=t,this.offset=e|0,this.size=a,this.buffer.on("change",this.onBufferChange,this)}get _gcLastUsed(){return this.buffer?._gcLastUsed??-1}set _gcLastUsed(t){if(this.buffer)this.buffer._gcLastUsed=t}onBufferChange(){this._resourceId=c("resource"),this.emit("change",this)}destroy(t=!1){if(this.destroyed=!0,t)this.buffer.destroy();this.emit("change",this),this.buffer=null,this.removeAllListeners()}}function Me(t,e){for(let a in t.attributes){let f=t.attributes[a],s=e[a];if(s)f.format??(f.format=s.format),f.offset??(f.offset=s.offset),f.instance??(f.instance=s.instance);else if(!f.format)r(`Attribute ${a} is not present in the shader, but is present in the geometry. Unable to infer attribute details.`)}h(t)}function h(t){let{buffers:e,attributes:a}=t,f={},s={};for(let n in e){let o=e[n];f[o.uid]=0,s[o.uid]=0}for(let n in a){let o=a[n];f[o.buffer.uid]+=te(o.format).stride}for(let n in a){let o=a[n];o.stride??(o.stride=f[o.buffer.uid]),o.start??(o.start=s[o.buffer.uid]),s[o.buffer.uid]+=te(o.format).stride}}var X=[];X[b.NONE]=void 0;X[b.DISABLED]={stencilWriteMask:0,stencilReadMask:0};X[b.RENDERING_MASK_ADD]={stencilFront:{compare:"equal",passOp:"increment-clamp"},stencilBack:{compare:"equal",passOp:"increment-clamp"}};X[b.RENDERING_MASK_REMOVE]={stencilFront:{compare:"equal",passOp:"decrement-clamp"},stencilBack:{compare:"equal",passOp:"decrement-clamp"}};X[b.MASK_ACTIVE]={stencilWriteMask:0,stencilFront:{compare:"equal",passOp:"keep"},stencilBack:{compare:"equal",passOp:"keep"}};X[b.INVERSE_MASK_ACTIVE]={stencilWriteMask:0,stencilFront:{compare:"not-equal",passOp:"keep"},stencilBack:{compare:"not-equal",passOp:"keep"}};var ce=[{type:"mat3x3<f32>",test:(t)=>t.value.a!==void 0,ubo:`
+        `}};class Ce{constructor(t){this._syncFunctionHash=Object.create(null),this._adaptor=t,this._systemCheck()}_systemCheck(){if(!Et())throw Error("Current environment does not allow unsafe-eval, please use pixi.js/unsafe-eval module to enable support.")}ensureUniformGroup(t){let e=this.getUniformGroupData(t);t.buffer||(t.buffer=new H({data:new Float32Array(e.layout.size/4),usage:v.UNIFORM|v.COPY_DST}))}getUniformGroupData(t){return this._syncFunctionHash[t._signature]||this._initUniformGroup(t)}_initUniformGroup(t){let e=t._signature,a=this._syncFunctionHash[e];if(!a){let f=Object.keys(t.uniformStructures).map((o)=>t.uniformStructures[o]),s=this._adaptor.createUboElements(f),n=this._generateUboSync(s.uboElements);a=this._syncFunctionHash[e]={layout:s,syncFunction:n}}return this._syncFunctionHash[e]}_generateUboSync(t){return this._adaptor.generateUboSync(t)}syncUniformGroup(t,e,a){let f=this.getUniformGroupData(t);t.buffer||(t.buffer=new H({data:new Float32Array(f.layout.size/4),usage:v.UNIFORM|v.COPY_DST}));let s=null;if(!e)e=t.buffer.data,s=t.buffer.dataInt32;return a||(a=0),f.syncFunction(t.uniforms,e,s,a),!0}updateUniformGroup(t){if(t.isStatic&&!t._dirtyId)return!1;t._dirtyId=0;let e=this.syncUniformGroup(t);return t.buffer.update(),e}destroy(){this._syncFunctionHash=null}}class le extends m{constructor({buffer:t,offset:e,size:a}){super();this.uid=c("buffer"),this._resourceType="bufferResource",this._resourceId=c("resource"),this._bufferResource=!0,this.destroyed=!1,this.buffer=t,this.offset=e|0,this.size=a,this.buffer.on("change",this.onBufferChange,this)}get _gcLastUsed(){return this.buffer?._gcLastUsed??-1}set _gcLastUsed(t){if(this.buffer)this.buffer._gcLastUsed=t}onBufferChange(){this._resourceId=c("resource"),this.emit("change",this)}destroy(t=!1){if(this.destroyed=!0,t)this.buffer.destroy();this.emit("change",this),this.buffer=null,this.removeAllListeners()}}function Ae(t,e){for(let a in t.attributes){let f=t.attributes[a],s=e[a];if(s)f.format??(f.format=s.format),f.offset??(f.offset=s.offset),f.instance??(f.instance=s.instance);else if(!f.format)r(`Attribute ${a} is not present in the shader, but is present in the geometry. Unable to infer attribute details.`)}h(t)}function h(t){let{buffers:e,attributes:a}=t,f={},s={};for(let n in e){let o=e[n];f[o.uid]=0,s[o.uid]=0}for(let n in a){let o=a[n];f[o.buffer.uid]+=te(o.format).stride}for(let n in a){let o=a[n];o.stride??(o.stride=f[o.buffer.uid]),o.start??(o.start=s[o.buffer.uid]),s[o.buffer.uid]+=te(o.format).stride}}var X=[];X[b.NONE]=void 0;X[b.DISABLED]={stencilWriteMask:0,stencilReadMask:0};X[b.RENDERING_MASK_ADD]={stencilFront:{compare:"equal",passOp:"increment-clamp"},stencilBack:{compare:"equal",passOp:"increment-clamp"}};X[b.RENDERING_MASK_REMOVE]={stencilFront:{compare:"equal",passOp:"decrement-clamp"},stencilBack:{compare:"equal",passOp:"decrement-clamp"}};X[b.MASK_ACTIVE]={stencilWriteMask:0,stencilFront:{compare:"equal",passOp:"keep"},stencilBack:{compare:"equal",passOp:"keep"}};X[b.INVERSE_MASK_ACTIVE]={stencilWriteMask:0,stencilFront:{compare:"not-equal",passOp:"keep"},stencilBack:{compare:"not-equal",passOp:"keep"}};var ae=[{type:"mat3x3<f32>",test:(t)=>t.value.a!==void 0,ubo:`
             var matrix = uv[name].toArray(true);
             data[offset] = matrix[0];
             data[offset + 1] = matrix[1];
@@ -125,14 +125,14 @@ import{m,c,r,te,v,H,Rt,b}from"./chunk-14zhgy07.js";var qe={name:"local-uniform-b
                 cv[2] = v.blue;
                 gl.uniform3f(ud[name].location, v.red, v.green, v.blue);
             }
-        `}];function Ke(t,e,a){let f=[`
+        `}];function Xe(t,e,a){let f=[`
         var v = null;
         var v2 = null;
         var t = 0;
         var index = 0;
         var name = null;
         var arrayOffset = null;
-    `],s=0;for(let o=0;o<t.length;o++){let i=t[o],d=i.data.name,l=!1,u=0;for(let p=0;p<ce.length;p++)if(ce[p].test(i.data)){u=i.offset/4,f.push(`name = "${d}";`,`offset += ${u-s};`,ce[p].ubo),l=!0;break}if(!l)if(i.data.size>1)u=i.offset/4,f.push(a(i,u-s));else{let p=e[i.data.type];u=i.offset/4,f.push(`
+    `],s=0;for(let o=0;o<t.length;o++){let i=t[o],d=i.data.name,l=!1,u=0;for(let p=0;p<ae.length;p++)if(ae[p].test(i.data)){u=i.offset/4,f.push(`name = "${d}";`,`offset += ${u-s};`,ae[p].ubo),l=!0;break}if(!l)if(i.data.size>1)u=i.offset/4,f.push(a(i,u-s));else{let p=e[i.data.type];u=i.offset/4,f.push(`
                     v = uv.${d};
                     offset += ${u-s};
                     ${p};
@@ -141,7 +141,7 @@ import{m,c,r,te,v,H,Rt,b}from"./chunk-14zhgy07.js";var qe={name:"local-uniform-b
         for (let i = 0; i < ${t*e}; i++) {
             data[offset + (((i / ${t})|0) * 4) + (i % ${t})] = v[i];
         }
-    `}var Lt={f32:`
+    `}var Gt={f32:`
         data[offset] = v;`,i32:`
         dataInt32[offset] = v;`,u32:`
         dataInt32[offset] = v;`,"vec2<f32>":`
@@ -187,10 +187,10 @@ import{m,c,r,te,v,H,Rt,b}from"./chunk-14zhgy07.js";var qe={name:"local-uniform-b
         data[offset + 10] = v[8];`,"mat4x4<f32>":`
         for (let i = 0; i < 16; i++) {
             data[offset + i] = v[i];
-        }`,"mat3x2<f32>":x(3,2),"mat4x2<f32>":x(4,2),"mat2x3<f32>":x(2,3),"mat4x3<f32>":x(4,3),"mat2x4<f32>":x(2,4),"mat3x4<f32>":x(3,4)},sr={...Lt,"mat2x2<f32>":`
+        }`,"mat3x2<f32>":x(3,2),"mat4x2<f32>":x(4,2),"mat2x3<f32>":x(2,3),"mat4x3<f32>":x(4,3),"mat2x4<f32>":x(2,4),"mat3x4<f32>":x(3,4)},tr={...Gt,"mat2x2<f32>":`
         data[offset] = v[0];
         data[offset + 1] = v[1];
         data[offset + 2] = v[2];
         data[offset + 3] = v[3];
-    `};function Ze(t,e,a,f,s){if(t=Math.max(0,t),e=Math.min(e,a*f),t>=e)return 0;let n=Math.floor(t/a),o=t-n*a,i=Math.floor(e/a),d=e-i*a;if(n===i)return s[0].set(o,n,d-o,1),1;let l=0,u=n;if(o>0)s[l++].set(o,n,a-o,1),u++;if(i>u)s[l++].set(0,u,a,i-u);if(d>0)s[l++].set(0,i,d,1);return l}
-export{qe,nr,gt,ir,or,Ae,ce,Ke,Lt,sr,ue,Me,X,Ze};
+    `};function qe(t,e,a,f,s){if(t=Math.max(0,t),e=Math.min(e,a*f),t>=e)return 0;let n=Math.floor(t/a),o=t-n*a,i=Math.floor(e/a),d=e-i*a;if(n===i)return s[0].set(o,n,d-o,1),1;let l=0,u=n;if(o>0)s[l++].set(o,n,a-o,1),u++;if(i>u)s[l++].set(0,u,a,i-u);if(d>0)s[l++].set(0,i,d,1);return l}
+export{je,Qt,ht,Jt,er,Ce,ae,Xe,Gt,tr,le,Ae,X,qe};
