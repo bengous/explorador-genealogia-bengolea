@@ -1,4 +1,4 @@
-import{g,u,r,ue,v,W,jt,w}from"./chunk-qcwtext3.js";var ot={name:"local-uniform-bit",vertex:{header:`
+import{g,u,r,ue,v,W,jt,w}from"./chunk-wtrxn1yv.js";var ot={name:"local-uniform-bit",vertex:{header:`
 
             struct LocalUniforms {
                 uTransformMatrix:mat3x3<f32>,
