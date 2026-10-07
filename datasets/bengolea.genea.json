@@ -1,5 +1,5 @@
 {
-  "v": 1,
+  "v": 2,
   "meta": {
     "title": "Genealogía Bengolea",
     "featured": "Bengolea",
@@ -300,6 +300,7 @@
         "surname": "de Tejeda Garay Peralta",
         "sex": "M",
         "birthDate": "1674",
+        "birthQualifier": "about",
         "birthPlace": "Córdoba",
         "birthRaw": "n. circa 1674. Córdoba",
         "page": 107
@@ -799,6 +800,7 @@
         "surname": "Arce Cabrera",
         "sex": "F",
         "birthDate": "1706",
+        "birthQualifier": "about",
         "birthRaw": "Cir. 1706/--",
         "page": 111
       },
@@ -1130,6 +1132,7 @@
         "surname": "Duarte Lizondo",
         "sex": "F",
         "birthDate": "1718",
+        "birthQualifier": "about",
         "birthRaw": "Cir 1718/--",
         "page": 114
       },
@@ -2153,6 +2156,7 @@
         "surname": "Videla Bengolea",
         "sex": "F",
         "deathDate": "1947",
+        "deathQualifier": "about",
         "deathPlace": "Buenos Aires",
         "deathRaw": "f. Cir. 1947. Buenos Aires.",
         "page": 121
